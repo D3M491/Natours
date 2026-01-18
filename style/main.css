@@ -1,0 +1,37 @@
+body{
+    width: 100%;
+    margin: 0;
+}
+.header__img{
+    height: 50%;
+    width: 100%;
+}
+
+.menu__icon{
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 8px;
+}
+
+.logo_img{
+    width: 60px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+@font-face{
+    font-family: IBMPlexSans ;
+    src: url(../font/IBMPlexSans-Regular.ttf) format ("truetype");
+    src: url(../font/IBMPlexSans-Regular.otf) format ("opentype");
+    src: url(../font/IBMPlexSans-Regular.woff)format ("woff");
+    src: url(../font/IBMPlexSans-Regular.woff2)format ("woff2");
+    src: url(../font/IBMPlexSans-Regular.svg)format ("svg");
+
+}
+
+h1{
+    font-size: 1rem;
+    font-family: IBMPlexSans ;
+}
