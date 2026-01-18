@@ -12,17 +12,24 @@
     <header>
         <img class="header__img" src="img/barberlandscape.jpg" alt="">
         <img class="logo_img" src="img/nextbarber_icon_nobg.png"">
-        <nav>
-            <img class="menu__icon" src="img/menu__icon.png" alt="">
-            <ul class="menu__list">
-                <li class="menu__list__item">Home</li>
-                <li class="menu__list__item">Prenota</li>
-                <li class="menu__list__item">About</li>
-                <li class="menu__list__item">Contattaci</li>
-            </ul>
+        <nav class="menu">
+            <div class="menu__icon__box">
+                <img src="img/menu__icon.png" alt="" class="menu__icon">
+            </div>
+            <div class="overlayMenu">
+                <div class="modalMenu">
+                    <ul class="menu__list">
+                        <li class="menu__list__item"><h3>Home</h3></li>
+                        <li class="menu__list__item"><h3>Prenota</h3></li>
+                        <li class="menu__list__item"><h3>Chi siamo</h3></li>
+                        <li class="menu__list__item coming"><h3>Contattaci</h3></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <h1>Prenota un appuntamento</h1>
+        <h1 class="header__title auto-type">Prenota</h1>
     </header>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
 <script src="script/script.js"></script>
 
