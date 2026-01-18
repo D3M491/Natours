@@ -1,37 +1,192 @@
-body{
+body {
     width: 100%;
     margin: 0;
+    background-color: #1b1b1a;
 }
-.header__img{
-    height: 50%;
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(../font/BebasNeue-Regular.ttf) format("truetype"),
+        url(../font/BebasNeue-Regular.otf) format("opentype"),
+        url(../font/BebasNeue-Regular.woff) format("woff"),
+        url(../font/BebasNeue-Regular.woff2) format("woff2"),
+        url(../font/BebasNeue-Regular.svg) format("svg")
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url(../font/IBMPlexSans-Regular.ttf) format("truetype"),
+        url(../font/IBMPlexSans-Regular.otf) format("opentype"),
+        url(../font/IBMPlexSans-Regular.woff) format("woff"),
+        url(../font/IBMPlexSans-Regular.woff2) format("woff2"),
+        url(../font/IBMPlexSans-Regular.svg) format("svg")
+}
+
+/* colors :  Primary = #ab9385
+             Secondary = #1b1b1a
+             Third = #6d6d6d */
+
+h1 {
+    font-size: clamp(1rem ,calc( 4vw + 1rem), 5rem );
+    font-family: BebasNeue;
+}
+
+h2{
+    font-size: 0.9rem;
+    font-family: IBMPlexSans;
+}
+
+h3{
+    font-size: 0.8rem;
+    font-family: IBMPlexSans;
+}
+
+h4{
+    font-size: 0.7rem;
+    font-family: IBMPlexSans;
+}
+
+h5{
+    font-size: 0.7rem;
+    font-family: IBMPlexSans;
+}
+
+header{
+    position: relative;
+}
+
+.header__img {
+    height: 100%;
     width: 100%;
 }
 
-.menu__icon{
+.menu__icon {
     width: 30px;
     position: absolute;
     top: 0;
     right: 8px;
+    z-index: 9999;
+    cursor: pointer;
 }
 
-.logo_img{
+.menu__list {
+    text-align: right ;
+    margin: 40px 0 8px 0 ;
+    padding: 0 8px 0 0;
+    background-color: #1b1b1a;
+    list-style-type: none;
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu__list__item{
+    padding: 4px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.menu__list__item h3{
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.white{
+    color: #6d6d6d;
+}
+
+.white:hover{
+    color: #ab9385;
+}
+
+.menu__list__item::after{
+    content: "";
+    background-color: #ab9385;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+}
+
+.menu__list__item:hover::after{
+    width: 100%;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.menu__list__item:hover{
+    color: #ab9385;
+}
+
+.overlayMenu {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: opacity .1s ease, visibility .4s ease;
+}
+
+.modalMenu {
+    clip-path: inset(0 0 100% 0);
+    overflow: hidden;
+    opacity: 0;
+    transition: clip-path .4s ease, opacity .4s ease, visibility .4s ease;
+    visibility: hidden;
+    position: fixed;
+    width: 40%;
+    top: 0;
+    right: 0;
+    background-color: #1b1b1a;
+    border-bottom-left-radius: 8px;
+    height: 80%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 4px 4px 4px grey;
+}
+
+.overlayMenu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalMenu.open {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalMenu.closing {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    visibility: visible;
+}
+
+
+.logo_img {
     width: 60px;
     position: absolute;
     top: 8px;
     left: 8px;
 }
 
-@font-face{
-    font-family: IBMPlexSans ;
-    src: url(../font/IBMPlexSans-Regular.ttf) format ("truetype");
-    src: url(../font/IBMPlexSans-Regular.otf) format ("opentype");
-    src: url(../font/IBMPlexSans-Regular.woff)format ("woff");
-    src: url(../font/IBMPlexSans-Regular.woff2)format ("woff2");
-    src: url(../font/IBMPlexSans-Regular.svg)format ("svg");
+.header__title{
+    text-align: center;
+    color: #ab9385;
+    margin: 0;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 
-}
 
-h1{
-    font-size: 1rem;
-    font-family: IBMPlexSans ;
+
 }
