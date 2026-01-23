@@ -12,25 +12,79 @@
     <header>
         <img class="header__img" src="img/barberlandscape.jpg" alt="">
         <img class="logo_img" src="img/nextbarber_icon_nobg.png"">
-        <nav class="menu">
-            <div class="menu__icon__box">
-                <img src="img/menu__icon.png" alt="" class="menu__icon">
+      
+        <nav class=" menu">
+        <div class="menu__icon__box">
+            <img src="img/menu__icon.png" alt="" class="menu__icon">
+        </div>
+        <div class="overlayMenu">
+            <div class="modalMenu">
+                <ul class="menu__list">
+                    <li class="menu__list__item">
+                        <h3>Home</h3>
+                    </li>
+                    <li class="menu__list__item">
+                        <h3>Prenota</h3>
+                    </li>
+                    <li class="menu__list__item">
+                        <h3>Chi siamo</h3>
+                    </li>
+                    <li class="menu__list__item coming">
+                        <h3>Contattaci</h3>
+                    </li>
+                </ul>
             </div>
-            <div class="overlayMenu">
-                <div class="modalMenu">
-                    <ul class="menu__list">
-                        <li class="menu__list__item"><h3>Home</h3></li>
-                        <li class="menu__list__item"><h3>Prenota</h3></li>
-                        <li class="menu__list__item"><h3>Chi siamo</h3></li>
-                        <li class="menu__list__item coming"><h3>Contattaci</h3></li>
-                    </ul>
-                </div>
-            </div>
+        </div>
         </nav>
-        <h1 class="header__title auto-type">Prenota</h1>
+        <div class="wrapper">
+            <div class="static-txt">
+                <h1>Next</h1>
+            </div>
+            <div class="dynamic-txt">
+                <h1 class="header__title1">Style</h1>
+                <h1 class="header__title2">Hairs</h1>
+                <h1 class="header__title3">Change</h1>
+                <h1 class="header__title4">Barber</h1>
+            </div>
+        </div>
     </header>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <div class="form__section">
+        <form class=" form">
+            <h1 class="form__title">Prenota</h1>
+            <label class="form__name__label" for=" name"><input class="form__name" type="name"
+                    placeholder="Inserisci il tuo nome"></label>
+            <label class="form__email__label" for="email"><input class="form__email" type="name"
+                    placeholder="Inserisci la tua mail"></label>
+            <div class="form__when">
+                <label class="form__date__label" for="date"><input class="form__input__date" type="date"></label>
+                <label class="form__time__label" for="time"><input class="form__time" type="time"></label>
+            </div>
+            <button class="form__btn">Prenota</button>
+        </form>
+    </div>
+    <div class="section__prices">
+        <h1 class="prices__title">I nostri prezzi</h1>
+        <ul class="prices__list">
+            <li class="prices__list__item">
+                <h4 class="item__name">Taglio Classico</h4>
+                <h4 class="item__price">25€</h4>
+            </li>
+            <li class="prices__list__item">
+                <h4 class="item__name">Rasatura</h4>
+                <h4 class="item__price">12€</h4>
+            </li>
+            <li class="prices__list__item">
+                <h4 class="item__name">Completo (Taglio + Rasatura)</h4>
+                <h4 class="item__price">32€</h4>
+            </li>
+            <li class="prices__list__item">
+                <h4 class="item__name">Barba Style</h4>
+                <h4 class="item__price">15€</h4>
+            </li>
+        </ul>
+    </div>
+
+    <script src="script/script.js"></script>
 </body>
-<script src="script/script.js"></script>
 
 </html>
