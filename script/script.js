@@ -31,7 +31,3 @@ document.querySelector(".menu__icon").addEventListener("click", () => {
     }
 
 })
-
-var typed  = new Typed(".auto-type" , {
-    strings : ["Book" , "Style" , "Fresh" , "Next"]
-})
