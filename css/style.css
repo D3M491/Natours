@@ -1,0 +1,105 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/*selettore universale*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*font meglio nel body che nell'universale perchè è più efficiente*/
+body{
+    font-family: "Lato" , sans-serif ;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;/*1.7 volte piu grande dell'altezza che avremmo normalmente*/
+    color: #777;
+    padding: 30px;
+}
+
+.header{
+    height: 95vh;/*ad ogni punto the height dovrebbe essere al 95 % del vh */
+    background-image: linear-gradient(to right bottom , rgba(126, 213, 111, 0.801) ,rgba(40, 180, 133, 0.801) ), url(../img/hero.jpg);  /*per crear un gradiente devo sempre usare bg image , 
+                                                                                                quindi ne aggiungo un altro di fianco mettendo la virgola in mezzo. 
+                                                                                                To right mi dice da che lato andare col gradiente */
+    background-size: cover;/*a prescindere dalla larghezza del port , cerca di adattare l'immagine*/
+    background-position: top;/* riducenda la scheda , la parte in alto dell'immagine non viene tagliata , solo quella in basso*/
+    clip-path: polygon(0 0 , 100% 0, 100% 75vh , 0 100%); /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
+    position: relative;
+}
+
+.logo-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo{
+    height: 35px;/*usiamo o l altezza o la larghezza  e poi il browser adatta l'altro parametro*/
+}
+
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% , -50%); /*50% relativi all elemento stesso , non al parente*/
+}
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;/*metto in maiuscolo*/
+    backface-visibility: hidden;/*a volte le animazioni sono shaky quindi metto questa property*/
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation: moveInleft 1s ease-out  ;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    animation: moveInright 1s ease-out ;
+}
+
+/*I browser sono ottimizzati per animazioni di tipo transform e opacity*/
+@keyframes moveInleft{
+    0%{
+        opacity: 0;
+        transform : translateX(-100px)
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform : translateX(0)
+    }
+}
+
+@keyframes moveInright{
+    0%{
+        opacity: 0;
+        transform : translateX(100px)
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform : translateX(0)
+    }
+}
