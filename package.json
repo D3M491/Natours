@@ -1,0 +1,20 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "landing page for natours",
+  "homepage": "https://github.com/D3M491/default_project#readme",
+  "bugs": {
+    "url": "https://github.com/D3M491/default_project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D3M491/default_project.git"
+  },
+  "license": "ISC",
+  "author": "Dema",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
