@@ -2,7 +2,7 @@ $color-primary :  #55c57a;
 $color-primary-light : #7ed56f;
 $color-primary-dark : #28b485;
 $color-grey-dark : #777;
-
+$color-white : #fff;
 
 /*selettore universale*/
 *,
@@ -63,7 +63,7 @@ body{
 }
 
 .heading-primary{
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;/*metto in maiuscolo*/
     backface-visibility: hidden;/*a volte le animazioni sono shaky quindi metto questa property*/
 }
@@ -151,7 +151,7 @@ body{
 }
 
 .btn--white{
-    background-color: #fff;
+    background-color: $color-white;
     color: $color-grey-dark;
     
 }
@@ -170,7 +170,7 @@ body{
 }
 
 .btn--white::after{
-    background-color:#fff;
+    background-color: $color-white;
 }
 
 .btn:hover::after{
