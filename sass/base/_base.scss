@@ -1,0 +1,21 @@
+//file parziale che sara inserito nel main/*selettore universale*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /*ogni elemento eredita il box sizing dal body*/
+    box-sizing: inherit;
+}
+
+html {
+    /*scelgo 10px come root per semplificarmi la vita quando uso rem*/
+    /*poi metto una quantita zommabile dall user , voglio 10px? faccio 10/16 dove 16 è il default e moltiplico x 100%*/
+    /* font-size: 10px ; */
+    font-size: 62.5%;
+}
+
+/*font meglio nel body che nell'universale perchè è più efficiente*/
+body{
+    box-sizing: border-box;
+}

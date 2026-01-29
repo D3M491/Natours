@@ -1,0 +1,37 @@
+.header {
+    height: 95vh;
+    /*ad ogni punto the height dovrebbe essere al 95 % del vh */
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light , 0.8), rgba($color-primary-dark , 0.8)), url(../img/hero.jpg);
+    /*per crear un gradiente devo sempre usare bg image , 
+                                                                                                quindi ne aggiungo un altro di fianco mettendo la virgola in mezzo. 
+                                                                                                To right mi dice da che lato andare col gradiente */
+    background-size: cover;
+    /*a prescindere dalla larghezza del port , cerca di adattare l'immagine*/
+    background-position: top;
+    /* riducenda la scheda , la parte in alto dell'immagine non viene tagliata , solo quella in basso*/
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
+    position: relative;
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+        /*usiamo o l altezza o la larghezza  e poi il browser adatta l'altro parametro*/
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        /*50% relativi all elemento stesso , non al parente*/
+    }
+
+}
+
