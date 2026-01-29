@@ -1,189 +1,177 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
+@charset "UTF-8";
 /*selettore universale*/
 *,
 *::after,
-*::before{
-    margin: 0;
-    padding: 0;
-    /*ogni elemento eredita il box sizing dal body*/
-    box-sizing: inherit;
+*::before {
+  margin: 0;
+  padding: 0;
+  /*ogni elemento eredita il box sizing dal body*/
+  box-sizing: inherit;
 }
 
-html{
-    /*scelgo 10px come root per semplificarmi la vita quando uso rem*/
-    /*poi metto una quantita zommabile dall user , voglio 10px? faccio 10/16 dove 16 è il default e moltiplico x 100%*/
-    /* font-size: 10px ; */
-    font-size: 62.5%;
+html {
+  /*scelgo 10px come root per semplificarmi la vita quando uso rem*/
+  /*poi metto una quantita zommabile dall user , voglio 10px? faccio 10/16 dove 16 è il default e moltiplico x 100%*/
+  /* font-size: 10px ; */
+  font-size: 62.5%;
 }
-
 
 /*font meglio nel body che nell'universale perchè è più efficiente*/
-body{
-    font-family: "Lato" , sans-serif ;
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7;/*1.7 volte piu grande dell'altezza che avremmo normalmente*/
-    color: #777;
-    padding: 3rem;
-    box-sizing: border-box;
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7; /*1.7 volte piu grande dell'altezza che avremmo normalmente*/
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
-.header{
-    height: 95vh;/*ad ogni punto the height dovrebbe essere al 95 % del vh */
-    background-image: linear-gradient(to right bottom , rgba(126, 213, 111, 0.801) ,rgba(40, 180, 133, 0.801) ), url(../img/hero.jpg);  /*per crear un gradiente devo sempre usare bg image , 
-                                                                                                quindi ne aggiungo un altro di fianco mettendo la virgola in mezzo. 
-                                                                                                To right mi dice da che lato andare col gradiente */
-    background-size: cover;/*a prescindere dalla larghezza del port , cerca di adattare l'immagine*/
-    background-position: top;/* riducenda la scheda , la parte in alto dell'immagine non viene tagliata , solo quella in basso*/
-    clip-path: polygon(0 0 , 100% 0, 100% 75vh , 0 100%); /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
-    position: relative;
+.header {
+  height: 95vh; /*ad ogni punto the height dovrebbe essere al 95 % del vh */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); /*per crear un gradiente devo sempre usare bg image , 
+quindi ne aggiungo un altro di fianco mettendo la virgola in mezzo. 
+To right mi dice da che lato andare col gradiente */
+  background-size: cover; /*a prescindere dalla larghezza del port , cerca di adattare l'immagine*/
+  background-position: top; /* riducenda la scheda , la parte in alto dell'immagine non viene tagliata , solo quella in basso*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
+  position: relative;
 }
 
-.header__logo-box{
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
 }
 
-.header__logo{
-    height: 3.5rem;/*usiamo o l altezza o la larghezza  e poi il browser adatta l'altro parametro*/
+.header__logo {
+  height: 3.5rem; /*usiamo o l altezza o la larghezza  e poi il browser adatta l'altro parametro*/
 }
 
-.header__text-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50% , -50%); /*50% relativi all elemento stesso , non al parente*/
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%); /*50% relativi all elemento stesso , non al parente*/
 }
 
-.heading-primary{
-    color: #fff;
-    text-transform: uppercase;/*metto in maiuscolo*/
-    backface-visibility: hidden;/*a volte le animazioni sono shaky quindi metto questa property*/
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase; /*metto in maiuscolo*/
+  backface-visibility: hidden; /*a volte le animazioni sono shaky quindi metto questa property*/
 }
 
-.heading-primary--main{
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInleft 1s ease-out  ;
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation: moveInleft 1s ease-out;
 }
 
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.7rem;
-    animation: moveInright 1s ease-out ;
-    margin-bottom: 6rem;
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.7rem;
+  animation: moveInright 1s ease-out;
+  margin-bottom: 6rem;
 }
 
 /*I browser sono ottimizzati per animazioni di tipo transform e opacity*/
-@keyframes moveInleft{
-    0%{
-        opacity: 0;
-        transform : translateX(-10rem)
-    }
-    80%{
-        transform: translateX(1rem);
-    }
-    100%{
-        opacity: 1;
-        transform : translateX(0)
-    }
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
-@keyframes moveInright{
-    0%{
-        opacity: 0;
-        transform : translateX(10rem)
-    }
-    80%{
-        transform: translateX(-1rem);
-    }
-    100%{
-        opacity: 1;
-        transform : translateX(0)
-    }
+@keyframes moveInright {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
-@keyframes moveInButton{
-    0%{
-        opacity: 0;
-        transform : translateY(3rem)
-    }
-
-    100%{
-        opacity: 1;
-        transform : translateY(0rem)
-    }
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
 }
-
 /*pseudo class , lo state è il link*/
 .btn:link,
-.btn:visited{
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    /*animiamo tutto*/
-    transition: all 0.2s ;
-    position: relative;
-    font-size: 1.6rem;
-}   
-
-.btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0 , 0 , 0 , .2);
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  /*animiamo tutto*/
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
 }
 
-.btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 2rem rgba(0 , 0 , 0 , .2);
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.btn--white{
-    background-color: #fff;
-    color: #777;
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.btn::after{
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s ;
+.btn--white {
+  background-color: #fff;
+  color: #777;
 }
 
-.btn--white::after{
-    background-color:#fff;
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
 }
 
-.btn:hover::after{
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
+.btn--white::after {
+  background-color: #fff;
 }
 
-.btn--animated{
-    /*.75 è il delay*/
-    animation: moveInButton 0.5s ease-out 0.75s;
-    /*applica automaticamente lo style allo 0% prima che l'animazione starta*/
-    animation-fill-mode: backwards;
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
 
+.btn--animated {
+  /*.75 è il delay*/
+  animation: moveInButton 0.5s ease-out 0.75s;
+  /*applica automaticamente lo style allo 0% prima che l'animazione starta*/
+  animation-fill-mode: backwards;
+}
+
+/*# sourceMappingURL=style.css.map */
