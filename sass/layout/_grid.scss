@@ -13,6 +13,7 @@
 
   @include clearfix;
 
+  //selettore , seleziono tutte le classi che iniziano con col-
   [class^="col-"] {
     //Flottiamo tutto a sinistra
     float: left;
