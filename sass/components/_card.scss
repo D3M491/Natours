@@ -1,10 +1,36 @@
 .card {
-  background-color: orangered;
-  height: 50rem;
-  transition: all .7s;
 
-  &:hover {
+  //per il valore è meglio usare un alto numero , non viene specificato un motivo perchè non è chiaro
+  perspective: 150rem;
+  //questo serve per farlo funzionare su firefox
+  -moz-perspective: 150rem;
+
+
+  &__side {
+    background-color: orangered;
+    height: 50rem;
+    transition: all .7s;
+
+    &--front {
+      background-color: orangered;
+
+    }
+
+    &--back {
+      background-color: green;
+      transform: rotateY(180deg);
+      position: absolute;
+
+    }
+  }
+
+  &:hover &__side--front {
     transform: rotateY(180deg);
-    background-color: orange;
+    cursor: pointer;
+  }
+  
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+    cursor: pointer;
   }
 }

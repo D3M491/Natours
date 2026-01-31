@@ -264,14 +264,31 @@ body {
   transform: translateY(-1.5rem) scale(1.03);
   cursor: pointer;
 }
+
 .card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+.card__side {
   background-color: orangered;
   height: 50rem;
   transition: all 0.7s;
 }
-.card:hover {
+.card__side--front {
+  background-color: orangered;
+}
+.card__side--back {
+  background-color: green;
   transform: rotateY(180deg);
-  background-color: orange;
+  position: absolute;
+}
+.card:hover .card__side--front {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+  cursor: pointer;
 }
 
 .header {
