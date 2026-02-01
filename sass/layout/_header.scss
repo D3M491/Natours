@@ -8,6 +8,7 @@
     background-size: cover;
     /*a prescindere dalla larghezza del port , cerca di adattare l'immagine*/
     background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     /* riducenda la scheda , la parte in alto dell'immagine non viene tagliata , solo quella in basso*/
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
