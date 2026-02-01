@@ -317,7 +317,16 @@ body {
   text-transform: uppercase;
   color: #fff;
   position: absolute;
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+  top: 12rem;
+  right: 2rem;
+  text-align: right;
+  width: 72%;
+}
+.card__heading-span {
+  padding: 1rem 1.5rem;
+}
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
 }
 
 .header {

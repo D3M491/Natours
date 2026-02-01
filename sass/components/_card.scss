@@ -75,6 +75,17 @@
     text-transform: uppercase;
     color: $color-white;
     position: absolute;
-    background-image: linear-gradient(to right bottom, $color-secondary-light , $color-secondary-dark), url(../img/nat-5.jpg);
+    top: 12rem;
+    right: 2rem;
+    text-align: right;
+    width: 72%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light , $color-secondary-dark);
+    }
   }
 }
