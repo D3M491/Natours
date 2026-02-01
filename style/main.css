@@ -326,6 +326,7 @@ label input {
 
 .form__date {
     width: 100%;
+    background-color: red;
 }
 
 .form__time {
