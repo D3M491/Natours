@@ -1,0 +1,63 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black , .1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    //proprieta che permette di dare una forma intorno alla quale si wrappano gli altri elementi ( att . funziona solo con float . Il primo valore è il radius , il secondo e il terzo sono il centro del circle
+    -webkit-shape-outside : circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path : circle(50% at 50% 50%);
+    clip-path:circle(50% at 50% 50%) ;
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+
+  &__caption{
+      position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: center;
+    font-size: 1.7rem;
+    opacity: 0;
+    transition: all .5s;
+  }
+
+  //as soon as the story is hover , we want to change the caption
+  &:hover &__caption{
+    transform:  translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  &:hover &__img{
+    transform: translateX(-3.5rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+
+  &__img{
+    height: 100%;
+    transform: translateX(-3.5rem) scale(1.4);
+    transition: all .5s;
+  }
+
+  &__text {
+  transform: skewX(12deg);
+    
+  }
+}
