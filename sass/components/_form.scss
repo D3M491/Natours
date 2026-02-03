@@ -3,15 +3,6 @@
     margin-bottom: 2rem;
   }
 
-  &__label {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-left: 2rem;
-    margin-top: .7rem;
-    display: block;
-  }
-
-
   &__input {
     font-size: 1.5rem;
     font-family: inherit;
@@ -38,8 +29,25 @@
     &::-webkit-input-placeholder{
       color: $color-grey-dark-2;
     }
-
     
   }
 
+   &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+    //We need to apply some property to the label when we're writing in the input. To do that we use the json selector "+" wich select the siblings right next to the previous element . If we had more elements , we should have used "~". NOTE : If we need to select an element wich is before the input , it is not possible!!
+   &__input:placeholder-shown + &__label{
+    opacity: 0;
+    //if we just set opacity 0 , the element is still on the page . We use both because we need opacity animation(visibility isn't animable)
+    visibility: hidden;
+    transform: translateY(-4rem);
+   }
+
+  
 }
