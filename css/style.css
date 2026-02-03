@@ -472,6 +472,39 @@ body {
   object-fit: cover;
 }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+}
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  border: none;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  border-bottom: 3px solid transparent;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: block;
+  width: 90%;
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0);
+}
+.form__input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+.form__input::-webkit-input-placeholder {
+  color: #999;
+}
+
 .header {
   height: 95vh;
   /*ad ogni punto the height dovrebbe essere al 95 % del vh */
