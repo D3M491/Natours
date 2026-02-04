@@ -13,6 +13,7 @@
     background-color: rgba($color-white , .5);
     display: block;
     width: 90%;
+    transition: all .3s;
 
     &:focus {
       outline: none;
@@ -21,18 +22,18 @@
     }
 
     //when on focus , we write something invalid for the form , then apply this property
-    &:focus:invalid{
+    &:focus:invalid {
       border-bottom: 3px solid $color-secondary-dark;
     }
 
     //this change color of the typing cursor on input
-    &::-webkit-input-placeholder{
+    &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
-    
+
   }
 
-   &__label {
+  &__label {
     font-size: 1.2rem;
     font-weight: 700;
     margin-left: 2rem;
@@ -41,13 +42,59 @@
     transition: all .3s;
   }
 
-    //We need to apply some property to the label when we're writing in the input. To do that we use the json selector "+" wich select the siblings right next to the previous element . If we had more elements , we should have used "~". NOTE : If we need to select an element wich is before the input , it is not possible!!
-   &__input:placeholder-shown + &__label{
+  //We need to apply some property to the label when we're writing in the input. To do that we use the json selector "+" wich select the siblings right next to the previous element . If we had more elements , we should have used "~". NOTE : If we need to select an element wich is before the input , it is not possible!!
+  &__input:placeholder-shown+&__label {
     opacity: 0;
     //if we just set opacity 0 , the element is still on the page . We use both because we need opacity animation(visibility isn't animable)
     visibility: hidden;
     transform: translateY(-4rem);
-   }
+  }
 
-  
+  &__radio-group {
+    width: 50%;
+    display: inline;
+  }
+
+  &__radio-input{
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size ;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -.4rem;
+
+    &::after {
+      content: ""; //correct
+      display: block; //x
+      position: absolute; //correct
+      background-color: $color-primary; //correct
+      height: 1.3rem; //correct
+      width: 1.3rem; //correct 
+      border-radius: 50%; //correct
+      transform: translate(-50% , -50%); //correct
+      top: 50%; //correct
+      left: 50%; //correct
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+  }
+
+   //Selector that says : When the input is checked , select the label radio label , then his button in the after state
+    &__radio-input:checked + &__radio-label &__radio-button::after{
+      opacity: 1;
+    }
 }

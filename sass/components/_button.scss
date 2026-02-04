@@ -1,8 +1,9 @@
 /*pseudo class , lo state è il link*/
 .btn {
 
+    &,
     &:link,
-    :visited {
+    &:visited {
         text-transform: uppercase;
         text-decoration: none;
         padding: 1.5rem 4rem;
@@ -12,8 +13,13 @@
         transition: all 0.2s;
         position: relative;
         font-size: $default-font-size;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
+    &:focus,
     &:active {
         transform: translateY(-1px);
         box-shadow: 0 0.5rem 2rem rbga($color-black , 0.2);
