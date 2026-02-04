@@ -646,6 +646,7 @@ body {
   right: 6rem;
   border-radius: 50%;
   z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
 }
 .navigation__background {
   height: 6rem;
@@ -656,11 +657,11 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
-  transform: scale(80);
 }
 .navigation__nav {
+  opacity: 0;
   height: 100vh;
-  width: 100%;
+  width: 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -674,8 +675,25 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.navigation__link {
+.navigation__item {
+  margin: 1rem;
+}
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 300;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+  transition: all 0.4s;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 250%;
+}
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #55c57a;
+  transform: translateX(1rem);
 }
 
 .section-about {
