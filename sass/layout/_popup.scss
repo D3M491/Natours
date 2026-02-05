@@ -6,6 +6,13 @@
   width: 100%; //correct
   height: 100vh; //correct
   z-index: 3000; //correct
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  
+
+
 
   &__content {
     width: 70%; //correct
@@ -17,11 +24,14 @@
     z-index: 4000;
     display: table; //to make left and right have same height we make it look like a table 
     overflow: hidden;
+     opacity: 0;
+    transform: translate(-50% , -50% ) scale(.5);
+    transition: all .3s .2s; //.2 è il delay 
   }
 
   &__left {
     width: 33.333333%;
-    display: table-cell;//instead of using float(which is possible) we use this to make table and vertical align right box
+    display: table-cell; //instead of using float(which is possible) we use this to make table and vertical align right box
   }
 
   &__right {
@@ -39,22 +49,51 @@
 
   &__text {
     font-size: 1.4rem;
-    margin-bottom:4rem;
+    margin-bottom: 4rem;
+    -moz-column-count: 2; //automatically create two columns
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid $color-grey-light-2;
     column-count: 2; //automatically create two columns
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2;
     -moz-hyphens: auto;
-    -ms-hyphens : auto;
-    -webkit-hyphens : auto;
-    hyphens: auto;//va a capo automaticamente based on language
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; //va a capo automaticamente based on language
   }
 
-  &__x{
-    position: absolute;
-    font-size: 1.4rem;
-    top: 0;
-    right: 0;
-    text-decoration: none;
+  &:target {
+    opacity: 1;
+    visibility: visible;
   }
+
+  &:target &__content{
+    opacity: 1;
+    transform: translate(-50% , -50% ) scale(1);
+
+  }
+
+  &__close {
+
+    &:link,
+    &:visited {
+      position: absolute;
+      display: inline-block;
+      font-size: 3rem;
+      top: 2.5rem;
+      right: 2.5rem;
+      line-height: 1;
+      color: $color-grey-dark;
+      text-decoration: none;
+    }
+
+    &:hover{
+      color: $color-primary;
+    }
+
+
+  }
+
+
 
 }
