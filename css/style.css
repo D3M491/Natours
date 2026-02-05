@@ -1,4 +1,23 @@
 @charset "UTF-8";
+/*
+
+0- 600px : Phone 
+600-900px : Tablet Portrait
+900-1200px : Tablet Landscape
+[1200-1800] is where normal styles apply (DESKTOP FIRST APPROACH)
+1800px : Big desktop
+
+*/
+/*$breakpoint argument choices : 
+
+- phone 
+- Tab-port
+- tab-land
+- big-desktop
+
+ORDER : Base + Typography > general layout + grid > page layout >
+
+*/
 *,
 *::after,
 *::before {
@@ -14,10 +33,36 @@ html {
   /* font-size: 10px ; */
   font-size: 62.5%;
 }
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 37.5em) {
+  html {
+    font-size: 45%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 /*font meglio nel body che nell'universale perchè è più efficiente*/
 body {
   box-sizing: border-box;
+  padding: 3rem;
+}
+@media (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 /*I browser sono ottimizzati per animazioni di tipo transform e opacity*/
@@ -64,7 +109,6 @@ body {
   line-height: 1.7;
   /*1.7 volte piu grande dell'altezza che avremmo normalmente*/
   color: #777;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -81,6 +125,12 @@ body {
   letter-spacing: 3.5rem;
   animation: moveInleft 1s ease-out;
 }
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+    font-size: 5rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -88,6 +138,11 @@ body {
   letter-spacing: 1.7rem;
   animation: moveInright 1s ease-out;
   margin-bottom: 6rem;
+}
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.5rem;
+  }
 }
 
 .heading-secondary {
@@ -101,6 +156,16 @@ body {
   color: transparent;
   letter-spacing: 2px;
   transition: all 0.2s;
+}
+@media (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 .heading-secondary:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
@@ -569,6 +634,13 @@ body {
   /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
   position: relative;
 }
+@media (max-width: 37.5em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 100%);
+    height: 60vh;
+  }
+}
 .header__logo-box {
   position: absolute;
   top: 4rem;
@@ -592,6 +664,16 @@ body {
   padding: 10rem 0;
   font-size: 1.4rem;
 }
+@media (max-width: 56.25em) {
+  .footer {
+    padding: 8rem 0;
+  }
+}
+@media (max-width: 56.25em) {
+  .footer {
+    padding: 4rem 0;
+  }
+}
 .footer__logo-box {
   text-align: center;
 }
@@ -603,6 +685,12 @@ body {
   border-top: 1px solid #777;
   padding-top: 2rem;
   display: inline-block;
+}
+@media (max-width: 56.25em) {
+  .footer__navigation {
+    width: 100%;
+    text-align: center;
+  }
 }
 .footer__list {
   list-style-type: none;
@@ -628,10 +716,16 @@ body {
 }
 .footer__copyright {
   border-top: 1px solid #777;
-  display: inline-block;
   padding-top: 2rem;
   width: 80%;
   float: right;
+}
+@media (max-width: 56.25em) {
+  .footer__copyright {
+    width: 100%;
+    text-align: center;
+    float: none;
+  }
 }
 
 .navigation__checkbox {
@@ -652,6 +746,18 @@ body {
 .navigation__button:hover {
   cursor: pointer;
 }
+@media (max-width: 56.25em) {
+  .navigation__button {
+    top: 4.5rem;
+    right: 4.5rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .navigation__button {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
+}
 .navigation__background {
   height: 6rem;
   width: 6rem;
@@ -662,6 +768,18 @@ body {
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
   transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@media (max-width: 56.25em) {
+  .navigation__background {
+    top: 5rem;
+    right: 5rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .navigation__background {
+    top: 4rem;
+    right: 4rem;
+  }
 }
 .navigation__nav {
   opacity: 0;
@@ -876,8 +994,35 @@ body {
   margin: 0 auto;
   gap: 6rem;
 }
+@media (max-width: 56.25em) {
+  .row {
+    max-width: 120rem;
+    padding: 0 8rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .row {
+    max-width: 80rem;
+    padding: 0 5rem;
+  }
+}
+@media (max-width: 75em) {
+  .row {
+    padding: 0 12rem;
+  }
+}
+@media (min-width: 112.5em) {
+  .row {
+    padding: 0 10rem;
+  }
+}
 .row:not(:last-child) {
   margin-bottom: 8rem;
+}
+@media (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
 }
 .row::after {
   clear: both;
@@ -889,6 +1034,17 @@ body {
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
 }
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
