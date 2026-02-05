@@ -760,37 +760,48 @@ body {
 }
 .popup__content {
   width: 70%;
-  height: auto;
   background-color: #fff;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
   border-radius: 3px;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4000;
+  display: table;
+  overflow: hidden;
 }
-.popup__img--1 {
-  display: block;
-  position: relative;
-  top: 0;
-  width: 35rem;
+.popup__left {
+  width: 33.333333%;
+  display: table-cell;
 }
-.popup__img--2 {
+.popup__right {
+  width: 66.666666%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3rem 5rem;
+}
+.popup__img {
   display: block;
-  position: relative;
-  top: 0;
-  width: 35rem;
+  width: 100%;
 }
 .popup__text {
-  text-align: left;
-  position: fixed;
-  top: 2rem;
-  left: 30%;
-  width: 60%;
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 1px solid #e4e4e4;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
-.popup__didascalia {
-  text-transform: uppercase;
-  font-size: 1.6rem;
+.popup__x {
+  position: absolute;
+  font-size: 1.4rem;
+  top: 0;
+  right: 0;
+  text-decoration: none;
 }
 
 .section-about {
