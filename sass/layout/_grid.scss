@@ -1,13 +1,18 @@
 .row {
-  //con max width se ho abbastanza 
-  //spazio lui va a 114rem ma se non 
+  //con max width se ho abbastanza
+  //spazio lui va a 114rem ma se non
   //c'è lho lui si riduce occupando comunque il 100% del vw
   max-width: $grid-width;
   margin: 0 auto;
   gap: $gutter-horizontal;
 
+  @include respond (big-desktop) {
+    padding: 0 10rem;
+  }
 
-
+  @include respond(tab-land) {
+    padding: 0 12rem;
+  }
 
   @include respond(tab-port) {
     max-width: 120rem;
@@ -19,15 +24,11 @@
     padding: 0 5rem;
   }
 
-  @include respond(tab-land) {
-    padding: 0 12rem;
-  }
 
-  @include respond (big-desktop) {
-    padding: 0 10rem;
-  }
 
-  //col not selezioniamo tutto tranne quello tra parentesi 
+
+
+  //col not selezioniamo tutto tranne quello tra parentesi
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
 

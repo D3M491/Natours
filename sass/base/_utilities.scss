@@ -12,6 +12,14 @@
 
 .u-margin-bottom-big{
   margin-bottom: 8rem !important;
+
+  // @include respond(tab-port){
+  //   margin-bottom: 4rem !important;
+  // }
+
+  // @include respond(phone){
+  //     margin-bottom: 1.5rem !important;
+  // }
 }
 
 .u-margin-top-medium{
