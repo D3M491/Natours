@@ -10,10 +10,6 @@
   visibility: hidden;
   transition: all .3s;
 
-  
-
-
-
   &__content {
     width: 70%; //correct
     // height: auto;XXX
@@ -24,14 +20,24 @@
     z-index: 4000;
     display: table; //to make left and right have same height we make it look like a table 
     overflow: hidden;
-     opacity: 0;
-    transform: translate(-50% , -50% ) scale(.5);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.5);
     transition: all .3s .2s; //.2 è il delay 
+
+    @include respond(tab-land) {
+      display: block;
+    }
   }
 
   &__left {
     width: 33.333333%;
     display: table-cell; //instead of using float(which is possible) we use this to make table and vertical align right box
+
+    @include respond(tab-land) {
+      display: block;
+      width: 100%;
+
+    }
   }
 
   &__right {
@@ -44,7 +50,14 @@
   &__img {
     display: block; //correct
     width: 100%;
+    
 
+    @include respond(tab-land) {
+      display: inline-block;
+      width: 49%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   &__text {
@@ -67,9 +80,9 @@
     visibility: visible;
   }
 
-  &:target &__content{
+  &:target &__content {
     opacity: 1;
-    transform: translate(-50% , -50% ) scale(1);
+    transform: translate(-50%, -50%) scale(1);
 
   }
 
@@ -87,7 +100,7 @@
       text-decoration: none;
     }
 
-    &:hover{
+    &:hover {
       color: $color-primary;
     }
 
