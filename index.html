@@ -318,7 +318,19 @@
     </main>
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="img/logo-green-2x.png" alt="Full Logo" class="footer__logo">
+
+            <!-- With art directions we can set different images on different devices-->
+            <picture class="footer__logo">
+
+                <!--On phone , if the display res is low use 1x else use 2x-->
+                <source srcset="img/logo-green-small-1x.png 1x , img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)"> 
+                <!--if it isn't phone , use this ones-->
+                <img srcset="img/logo-green-1x.png 1x , img/logo-green-2x.png 2x" alt="Full Logo" class="footer__logo">
+            </picture>
+
+            <!--we can specify wich image resolution should display on different devices with scrset and 1x - 2x
+           <img srcset="img/logo-green-1x.png 1x , img/logo-green-2x.png 2x" alt="Full Logo" class="footer__logo"> -->
+
         </div>
         <div class="row">
             <div class="col-1-of-2">
