@@ -70,16 +70,26 @@
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
+
+                        <!--resolution switching using width . We need to specify the sizes of the image so for example the nat-1 is occuping 20% of the section a 900px
+                        To calculate the percentage use the current image resolutiona at specified breakpoint , in the first case at 900px the image has a width of 265px so 900/265 = 0.30 .
+                         At the end i put a default size for when none of the previous sizes is applied-->
+                        <img srcset="img/nat-1.jpg 300w , img/nat-1-large.jpg 1000w" alt="Photo-1"
+                            sizes="(max-width : 900px) 30vw , (max-width : 600px) 58vw , 290px "
+                            class="composition__photo composition__photo--p1">
+
+
+                        <!--
                         <img src="img/nat-1-large.jpg" alt="" class="composition__photo composition__photo--p1">
 
                         <img src="img/nat-2-large.jpg" alt="" class="composition__photo composition__photo--p2">
 
-                        <img src="img/nat-3-large.jpg" alt="" class="composition__photo composition__photo--p3">
+                        <img src="img/nat-3-large.jpg" alt="" class="composition__photo composition__photo--p3">-->
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section-features" >
+        <section class="section-features">
             <!--Per implementare il font icon che abbiamo importato basta chiamare il nome della classe che gli corrisponde (vedi file css icon font o cartella . usiamo una i ma e indifferente cosa usiamo come tag )-->
             <div class="row">
                 <div class="col-1-of-4">
@@ -323,7 +333,8 @@
             <picture class="footer__logo">
 
                 <!--On phone , if the display res is low use 1x else use 2x-->
-                <source srcset="img/logo-green-small-1x.png 1x , img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)"> 
+                <source srcset="img/logo-green-small-1x.png 1x , img/logo-green-small-2x.png 2x"
+                    media="(max-width: 37.5em)">
                 <!--if it isn't phone , use this ones-->
                 <img srcset="img/logo-green-1x.png 1x , img/logo-green-2x.png 2x" alt="Full Logo" class="footer__logo">
             </picture>
@@ -368,7 +379,8 @@
                         start booking now
                     </h2>
 
-                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; please read the terms and conditions first</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; please read the terms and
+                        conditions first</h3>
                     <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas tenetur est
                         ducimus et quasi amet ipsum ipsa soluta magnam? Debitis fuga odio quasi explicabo dignissimos
                         amet inventore cum? Similique, perferendis.Lorem ipsum dolor sit amet consectetur adipisicing
