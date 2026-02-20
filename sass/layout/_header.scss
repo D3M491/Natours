@@ -14,6 +14,11 @@
     /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
     position: relative;
 
+    //risoluzione dello schermo retina di apple si usa come riferimento
+    @media (min-resolution : 192dpi){
+
+    }
+
     @include respond(phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 100%);
