@@ -15,6 +15,12 @@
   background-size: cover;
   transform: skewY(-7deg);
 
+  @media (min-resolution : 192dpi) and (min-width : 37.5em),
+         (min-width: 125em){
+    background-image: linear-gradient(to right bottom, rgba($color-secondary-light , 0.8), rgba($color-secondary-dark , 0.8)),
+    url(../img/nat-4.jpg);
+  }
+
   //SELETTORE che seleziona solo i direct child del contenitore parente ( in questo caso le row)
   &>* {
     transform: skewY(7deg);

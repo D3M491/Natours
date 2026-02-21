@@ -1127,6 +1127,11 @@ body {
   background-size: cover;
   transform: skewY(-7deg);
 }
+@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  .section-features {
+    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/nat-4.jpg);
+  }
+}
 .section-features > * {
   transform: skewY(7deg);
   margin-top: -10rem;
