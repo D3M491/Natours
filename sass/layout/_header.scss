@@ -1,7 +1,7 @@
 .header {
     height: 95vh;
     /*ad ogni punto the height dovrebbe essere al 95 % del vh */
-    background-image: linear-gradient(to right bottom, rgba($color-primary-light , 0.8), rgba($color-primary-dark , 0.8)), url(../img/hero.jpg);
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light , 0.8), rgba($color-primary-dark , 0.8)), url(../img/hero-small.jpg);
     /*per crear un gradiente devo sempre usare bg image , 
                                                                                                 quindi ne aggiungo un altro di fianco mettendo la virgola in mezzo. 
                                                                                                 To right mi dice da che lato andare col gradiente */
@@ -14,9 +14,12 @@
     /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
     position: relative;
 
-    //risoluzione dello schermo retina di apple si usa come riferimento
-    @media (min-resolution : 192dpi){
-
+    //risoluzione dello schermo retina di apple si usa come riferimento + metto un minimo di width perche non voglio caricare grosse img in smartphone
+    @media (min-resolution : 192dpi) and (min-width : 37.5em),
+           (min-width : 125em) {
+        background-image: linear-gradient(to right bottom, rgba($color-secondary-light , 0.8),
+                rgba($color-secondary-dark, 0.8)),
+            url(../img/hero.jpg);
     }
 
     @include respond(phone) {
@@ -25,7 +28,7 @@
         height: 60vh;
     }
 
-   
+
 
     &__logo-box {
         position: absolute;
@@ -33,9 +36,9 @@
         left: 4rem;
         margin-bottom: 8rem;
 
-         @include respond(tab-port){
+        @include respond(tab-port) {
             margin-bottom: 6rem;
-         }
+        }
     }
 
     &__logo {

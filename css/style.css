@@ -750,7 +750,7 @@ body {
 .header {
   height: 95vh;
   /*ad ogni punto the height dovrebbe essere al 95 % del vh */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   /*per crear un gradiente devo sempre usare bg image , 
                                                                                               quindi ne aggiungo un altro di fianco mettendo la virgola in mezzo. 
                                                                                               To right mi dice da che lato andare col gradiente */
@@ -762,6 +762,11 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
   position: relative;
+}
+@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg);
+  }
 }
 @media (max-width: 37.5em) {
   .header {
