@@ -28,17 +28,24 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    //proprieta che permette di dare una forma intorno alla quale si wrappano gli altri elementi ( att . funziona solo con float . Il primo valore è il radius , il secondo e il terzo sono il centro del circle
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    border-radius: 50%;
+    overflow: hidden;
+
+
+    @supports (clip-path : circle(50% at 50% 50%)) or (clip-path : circle(50% at 50% 50%)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      //proprieta che permette di dare una forma intorno alla quale si wrappano gli altri elementi ( att . funziona solo con float . Il primo valore è il radius , il secondo e il terzo sono il centro del circle
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+    }
+
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
 
 
     @include respond(phone) {
-      transform: translateX(-3rem)  skewX(0);
+      transform: translateX(-3rem) skewX(0);
     }
   }
 
@@ -75,8 +82,8 @@
   &__text {
     transform: skewX(12deg);
 
-     @include respond(phone) {
-      transform:skewX(0);
+    @include respond(phone) {
+      transform: skewX(0);
     }
 
   }

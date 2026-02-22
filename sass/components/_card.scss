@@ -13,6 +13,7 @@
     height: 52rem;
     transition: all .8s ease;
     //it hides the back part of an element
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
     top: 0;

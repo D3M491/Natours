@@ -151,10 +151,17 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #55c57a;
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .heading-secondary {
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+.heading-secondary {
   letter-spacing: 2px;
   transition: all 0.2s;
 }
@@ -413,6 +420,7 @@ body {
 .card__side {
   height: 52rem;
   transition: all 0.8s ease;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -595,10 +603,18 @@ body {
   width: 15rem;
   height: 15rem;
   float: left;
-  -webkit-shape-outside: circle(50% at 50% 50%);
-  shape-outside: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+@supports (clip-path: circle(50% at 50% 50%)) or (clip-path: circle(50% at 50% 50%)) {
+  .story__shape {
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+  }
+}
+.story__shape {
   transform: translateX(-3rem) skewX(12deg);
   position: relative;
 }
@@ -760,10 +776,18 @@ body {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* riducenda la scheda , la parte in alto dell'immagine non viene tagliata , solo quella in basso*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+@supports (clip-path: polygon(0)) or (-webkit-clip-path: polygon(0)) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
+}
+.header {
   /*sostanzialmente devo dare 4 coordinate per 4 angoli che formano la mia immagine che voglio vedere */
   position: relative;
 }
-@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+@media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
   .header {
     background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg);
   }
@@ -1024,8 +1048,13 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+}
+@supports (-webkit-backdrop-filter: blur(2px)) or (backdrop-filter: blur(2px)) {
+  .popup {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 .popup__content {
   width: 70%;
