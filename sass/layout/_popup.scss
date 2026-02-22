@@ -9,6 +9,10 @@
   opacity: 0;
   visibility: hidden;
   transition: all .3s;
+  //Always check on caniuse.com if a property is highly supported by top browsers .
+  //This property can apply a blur effect , we need to specify a px to say how much blur
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 
   &__content {
     width: 70%; //correct
