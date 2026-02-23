@@ -7,7 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-    <!--Commento perche ho già concatendato questo file con il main-->
     <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
@@ -75,17 +74,20 @@
                         <!--resolution switching using width . We need to specify the sizes of the image so for example the nat-1 is occuping 20% of the section a 900px
                         To calculate the percentage use the current image resolutiona at specified breakpoint , in the first case at 900px the image has a width of 265px so 900/265 = 0.30 .
                          At the end i put a default size for when none of the previous sizes is applied-->
-                        <img srcset="img/nat-1.jpg 300w , img/nat-1-large.jpg 1000w" alt="Photo-1"
-                            sizes="(max-width : 56em) 30vw , (max-width : 37.5em) 58vw , 290px "
-                            class="composition__photo composition__photo--p1">
+                        <img srcset="img/nat-1.jpg 300w , img/nat-1-large.jpg 1000w" 
+                             sizes="(max-width : 900px) 30vw , (max-width : 600px) 58vw , 290px "
+                             alt="Photo-1"
+                             class="composition__photo composition__photo--p1">
 
-                        <img srcset="img/nat-2.jpg 300w , img/nat-2-large.jpg 1000w" alt="Photo-2"
-                            sizes="(max-width : 56em) 30vw , (max-width : 37.5em) 58vw , 290px "
-                            class="composition__photo composition__photo--p2">
+                               <img srcset="img/nat-2.jpg 300w , img/nat-2-large.jpg 1000w" 
+                             sizes="(max-width : 900px) 30vw , (max-width : 600px) 58vw , 290px "
+                             alt="Photo-2"
+                             class="composition__photo composition__photo--p2">
 
-                        <img srcset="img/nat-3.jpg 300w , img/nat-3-large.jpg 1000w" alt="Photo-3"
-                            sizes="(max-width : 56em) 30vw , (max-width : 37.5em) 58vw , 290px "
-                            class="composition__photo composition__photo--p3">
+                               <img srcset="img/nat-3.jpg 300w , img/nat-3-large.jpg 1000w" 
+                             sizes="(max-width : 900px) 30vw , (max-width : 600px) 58vw , 290px "
+                             alt="Photo-3"
+                             class="composition__photo composition__photo--p3">
 
 
                         <!--

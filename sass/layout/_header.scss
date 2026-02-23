@@ -21,10 +21,10 @@
     position: relative;
 
     //risoluzione dello schermo retina di apple si usa come riferimento + metto un minimo di width perche non voglio caricare grosse img in smartphone
-    @media (min-resolution : 192dpi) and (min-width : 37.5em),
+    @media only screen and (min-resolution : 192dpi) and (min-width : 37.5em),
     //We need to add this cause safari doesent support min-resolution
-    (-webkit-min-device-pixel-ratio : 2) and (min-width : 37.5em),
-    (min-width : 125em) {
+    only screen and (-webkit-min-device-pixel-ratio : 2) and (min-width : 37.5em),
+    only screen and (min-width : 125em) {
         background-image: linear-gradient(to right bottom, rgba($color-secondary-light , 0.8),
                 rgba($color-secondary-dark, 0.8)),
             url(../img/hero.jpg);
